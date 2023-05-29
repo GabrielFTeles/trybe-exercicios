@@ -1,0 +1,375 @@
+/* !============== GLOBAL ================== */
+
+* {padding: 0; margin: 0; box-sizing: border-box;}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Lato', sans-serif;
+
+  padding-inline: 1.5rem;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 70% 25%;
+  gap: 6rem;
+}
+
+ul {
+  list-style: none;
+}
+
+table, td, th {
+  border: 1px solid #000000;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td, th {
+  padding: 1rem;
+}
+
+img {
+  vertical-align: top;
+}
+
+section + section {
+  margin-top: 8rem;
+}
+
+.container {
+  margin-inline: auto;
+  width: min(128rem, 100%);
+}
+
+.important {
+  background: #ffcc00;
+  padding: 0.4rem;
+
+  cursor: grab;
+
+  transition: 0.3s;
+}
+
+.important:hover {
+  background: #000000;
+  color: #fff;
+}
+
+.underline {
+  border-bottom: 3px solid #ffcc00;
+
+  position: relative;
+}
+
+.underline::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  z-index: -100;
+
+  transition: 0.4s;
+
+  background: #ffcc00;
+
+  height: 0;
+  width: 100%;
+}
+
+.underline:hover::before {
+  height: 100%;
+}
+
+.img-container {
+  border: 5px solid #000000;
+
+  width: fit-content;
+
+  margin-inline: auto;
+  margin-top: 2rem;
+
+  overflow: hidden;
+
+  transition: 0.4s;
+
+  margin-bottom: 1.4rem;
+}
+
+.img-container:hover {
+  border: 5px solid #ffcc00;
+  transform: scale(1.05);
+}
+
+.animal-img {
+  width: 100%;
+
+  transition: 0.8s;
+}
+
+.img-container:hover .animal-img {
+  transform: scale(1.15);
+}
+
+.credits {
+  display: block;
+  color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+}
+
+
+/* !============== HEADER ==================== */
+
+#pg-header {
+  border-bottom: 1px solid #e6e6e6;
+
+  padding: 1rem;
+  margin-bottom: 3rem;
+
+  display: grid;
+  grid-template-areas: 'A B';
+  align-items: center;
+}
+
+.pg-title {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 900;
+
+  justify-self: flex-end;
+}
+
+.bl {
+  display: block;
+}
+
+.pg-nav {
+  justify-self: center;
+  align-self: flex-end;
+}
+
+.pg-nav ul {
+  display: flex;
+  gap: 1rem;
+}
+
+.pg-nav a {
+  text-decoration: none;
+}
+
+.pg-nav li {
+  background: #000000;
+
+  overflow: hidden;
+
+  position: relative;
+
+  padding: 1rem 0.8rem;
+}
+
+.nav-text {
+  color: #fff;
+  font-weight: 700;
+  
+  position: relative;
+  z-index: 100;
+
+  transition: 0.3s;
+}
+
+.pg-nav li:hover .nav-text {
+  color: #000000;
+}
+
+.pg-nav li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  z-index: 1;
+
+  background: #ffcc00;
+
+  transition: 0.4s;
+
+  height: 100%;
+  width: 0;
+}
+
+.pg-nav li:hover::before {
+  width: 100%;
+}
+
+
+/* !============== ARTICLE ==================== */
+
+.about-stomatopoda {
+  width: min(64rem, 100%);
+  justify-self: flex-end;
+}
+
+.sub-title {
+  font-size: 4rem;
+  font-weight: 900;
+
+  margin-left: 1rem;
+
+  position: relative;
+
+  margin-top: 1rem;
+}
+
+.sub-title::before {
+  content: '';
+  position: absolute;
+  left: -1rem; bottom: 0.1rem;
+  z-index: -10;
+
+  background: #ffcc00;
+
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.content {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e6e6e6;
+}
+
+.article-paragraph {
+  font-size: 2rem;
+}
+
+.article-paragraph + .article-paragraph {
+  margin-top: 2rem;
+}
+
+.info-table {
+  margin-inline: auto;
+
+  margin-block: 2rem;
+}
+
+.info-table th {
+  font-weight: 900;
+  color: #fff;
+
+  background: #000000;
+}
+
+.classification {
+  font-weight: 700;
+}
+
+
+/* !============== REFERENCE SECTION ==================== */
+
+.reference-list {
+  margin-top: 4rem;
+  margin-left: 2.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.reference {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.reference::before {
+  content: '';
+  position: absolute;
+  left: -2.5rem; bottom: 0.3rem;
+
+  background: #000000;
+
+  height: 0.8rem;
+  width: 0.8rem;
+
+  border: 5px solid #ffcc00;
+}
+
+.reference-link {
+  text-decoration: none;
+  color: #000000;
+}
+
+
+/* !============== ASIDE ==================== */
+
+#pg-aside {
+  border-left: 1px solid #e6e6e6;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  margin-top: 2rem;
+
+  width: 100%;
+  height: fit-content;
+
+  padding: 2rem;
+}
+
+#pg-aside figure {
+  width: 100%;
+}
+
+#pg-aside img {
+  width: 100%;
+  border: 3px solid #000000;
+}
+
+.yt-link {
+  text-decoration: none;
+}
+
+.yt-button {
+  width: 100%;
+  
+  padding-block: 1rem;
+
+  border: none;
+  cursor: pointer;
+
+  background: #000000;
+
+  transition: 0.4s;
+  
+  color: white;
+  font-weight: 900;
+  font-size: 1.8rem;
+}
+
+.yt-button:hover {
+  background: #ffcc00;
+  color: #000000;
+}
+
+
+/* !============== FOOTER ==================== */
+
+#footer {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 4rem;
+
+  padding: 4rem;
+  border-top: 1px solid #e6e6e6;
+}
+
+.footer-text {
+  font-weight: 900;
+
+  padding: 2rem;
+}
